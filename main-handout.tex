@@ -1,0 +1,112 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%      LaTeX 讲义           %%%%%%%
+%%%%%%%%     制作者： 唐博          %%%%%%%
+%%%%%%%%     邮箱：tsongj@163.com   %%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[12pt,a4paper,openany]{handout}
+
+% =========================================================================
+% 1. 一键切换版面模式（联动页面尺寸、页眉页脚线宽及题间留白）
+% =========================================================================
+% 可选参数：
+%   standard  -> A4 标准版（默认）
+%   loose     -> A4 宽松版（增大题间留白）
+%   compact   -> A4 紧凑版（缩小题间留白）
+%   board     -> A5 横版（210x148mm）单题板书版（自动每题换页 + 调整页边距与粗分隔线）
+\setlayoutmode{board}
+
+% 全局列表与对齐微调
+\setlist{nosep}
+\raggedbottom
+
+% =========================================================================
+% 2. 四套独立解答颜色配置（可直接修改 RGB 数值）
+% =========================================================================
+\definecolor{solColor}{RGB}{75, 0, 130}        % 常规解答颜色（默认紫色）
+\definecolor{altsolcolor}{RGB}{0, 174, 239}    % 多解 altsol 颜色（默认青色）
+\definecolor{aicolor}{RGB}{170, 65, 130}       % AI解答 AIsol 颜色（默认橙紫色）
+\definecolor{analysiscolor}{RGB}{0, 128, 0}    % 思路分析 analysis 颜色（默认深绿色）
+
+% =========================================================================
+% 3. 讲义版本与解答开关控制（教师版 / 学生版切换区）
+% =========================================================================
+% 取消注释开启对应解答（默认全部关闭，即学生版）
+\soltrue          % 显示例题解答
+\lxsoltrue        % 显示练习/作业/拓展解答
+% \tzsoltrue      % 显示拓展专属解答
+% \analysistrue   % 显示分析与解说
+\AIprooftrue      % 显示 AIsol 解答（解法(T)2、解法(T)3...）
+\problemstrue     % 显示题目内容（注释掉则隐藏题干，解答直接紧跟在题号后面）
+
+% 开启补充题组（默认关闭）
+% \groupAtrue
+% \groupBtrue
+% \groupCtrue
+
+% 隐藏备课与待删内容
+\excludecomment{knowledge}
+\excludecomment{beike}
+\excludecomment{Del}
+
+% 学生版答题留白高度设置（类文件已声明变量，此处直接赋值覆盖）
+\setlength{\solfiveproblems}{0cm}
+\setlength{\solfourproblems}{3cm}
+\setlength{\solthreeproblems}{4.8cm}
+\setlength{\soltwoproblems}{6cm}
+\setlength{\soloneproblems}{9cm}
+
+% =========================================================================
+% 4. 正文内容
+% =========================================================================
+\begin{document}
+	
+	% --- 前言与目录 ---
+	\frontmatter
+	\setcounter{page}{2}\cleardoublepage
+	\pagenumbering{Roman}
+	
+	\pagestyle{fancy}
+	\fancyhf{}
+	\cfoot{\vspace{0.2cm}\thepage}
+	
+	\newpage
+	\tableofcontents
+	
+	% --- 讲义正文 ---
+	\mainmatter
+	
+	% \part{4秋}
+	\include{chapter4A-260402/4-02-1-小数计算}
+	\include{chapter4A-260402/4-02-1-小数计算-exercises}
+	\include{chapter4A-260402/4-02-2-应用题综合复习}
+	\include{chapter4A-260402/4-02-2-应用题综合复习-exercises}
+	\include{chapter4A-260402/4-02-3排列与组合}
+	\include{chapter4A-260402/4-02-3排列与组合-exercises}
+	\include{chapter4A-260402/4-02-4-平均数问题}
+	\include{chapter4A-260402/4-02-4-平均数问题-exercises}
+	\include{chapter4A-260402/4-02-5-平均数问题进阶}
+	\include{chapter4A-260402/4-02-5-平均数问题进阶-exercises}
+	\include{chapter4A-260402/4-02-6火车过桥问题}
+	\include{chapter4A-260402/4-02-6火车过桥问题-exercises}
+	\include{chapter4A-260402/4-02-7排列组合的应用}
+	\include{chapter4A-260402/4-02-7排列组合的应用-exercises}
+	\include{chapter4A-260402/4-02-8行程图分析方法}
+	\include{chapter4A-260402/4-02-8行程图分析方法-exercises}
+	\include{chapter4A-260402/4-02-9-补充基础-基本图形面积}
+	\include{chapter4A-260402/4-02-9直线型面积(一)}
+	\include{chapter4A-260402/4-02-9直线型面积(一)-exercises}
+	\include{chapter4A-260402/4-02-10直线型面积(二)}
+	\include{chapter4A-260402/4-02-10直线型面积(二)-exercises}
+	\include{chapter4A-260402/4-02-11简单统筹规划}
+	\include{chapter4A-260402/4-02-11简单统筹规划-exercises}
+	\include{chapter4A-260402/4-02-12格点与割补(一)}
+	\include{chapter4A-260402/4-02-12格点与割补(一)-exercises}
+	\include{chapter4A-260402/4-02-13格点与割补(二)}
+	\include{chapter4A-260402/4-02-13格点与割补(二)-exercises}
+	\include{chapter4A-260402/4-02-14最值问题(一)}
+	\include{chapter4A-260402/4-02-14最值问题(一)-exercises}
+	
+	\include{chapter/review} % 期末复习
+	
+\end{document}
