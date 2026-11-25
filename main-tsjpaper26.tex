@@ -1,0 +1,85 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%      LaTeX 讲义           %%%%%%%
+%%%%%%%%     制作者： 唐博          %%%%%%%
+%%%%%%%%     邮箱：tsongj@163.com   %%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[12pt,a4paper,openany]{book}
+
+% 加载核心自定义宏包（已整合所有基础宏包与环境配置）
+\usepackage{tsjpaper26v1.0}
+\usepackage{siunitx}
+\usepackage{comment}
+
+% =========================================================================
+% 1. 一键切换版面模式（联动页面尺寸、页眉页脚线宽及题间留白）
+% =========================================================================
+% 可选参数：
+%   standard  -> A4 标准版（默认）
+%   loose     -> A4 宽松版（增大题间留白）
+%   compact   -> A4 紧凑版（缩小题间留白）
+%   board     -> 150x200mm 单题板书版（自动每题换页 + 调整页边距与粗分隔线）
+\setlayoutmode{board}
+
+% 全局列表与对齐微调
+\setlist{nosep}
+\raggedbottom
+
+% =========================================================================
+% 2. 讲义版本与解答开关控制（教师版 / 学生版切换区）
+% =========================================================================
+% 取消注释开启对应解答（默认全部关闭，即学生版）
+ \soltrue        % 显示例题解答
+ \lxsoltrue      % 显示练习/作业/拓展解答
+% \tzsoltrue      % 显示拓展专属解答
+% \analysistrue   % 显示分析与解说
+\problemstrue     % 显示题目内容
+
+% 开启补充题组（默认关闭）
+% \groupAtrue
+% \groupBtrue
+% \groupCtrue
+
+% 隐藏备课与待删内容
+\excludecomment{knowledge}
+\excludecomment{beike}
+\excludecomment{Del}
+
+% 学生版答题留白高度设置（宏包已声明变量，此处直接赋值覆盖）
+\setlength{\solfiveproblems}{0cm}
+\setlength{\solfourproblems}{3cm}
+\setlength{\solthreeproblems}{4.8cm}
+\setlength{\soltwoproblems}{6cm}
+\setlength{\soloneproblems}{9cm}
+
+% =========================================================================
+% 3. 正文内容
+% =========================================================================
+\begin{document}
+	
+	% --- 前言与目录 ---
+	\frontmatter
+	\setcounter{page}{2}\cleardoublepage
+	\pagenumbering{Roman}
+	
+	\pagestyle{fancy}
+	\fancyhf{}
+	\cfoot{\vspace{0.2cm}\thepage}
+	
+	% \input{cover}
+	% \input{preface}
+	
+	\newpage
+	\tableofcontents
+	
+	% --- 讲义正文 ---
+	\mainmatter
+	
+	% \part{4秋}
+	\include{chapter4A-260402/4-02-1-小数计算}
+	\include{chapter4A-260402/4-02-1-小数计算-exercises}
+
+	
+	\include{chapter/review} % 期末复习
+	
+\end{document}
